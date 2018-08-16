@@ -1,0 +1,28 @@
+{
+  "name": "rouboInfo",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "GetuiConfigure": "node node_modules/react-native-getui/GetuiConfiguration.js",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "16.4.1",
+    "react-native": "0.56.0",
+    "react-native-elements": "^1.0.0-beta",
+    "react-native-getui": "^1.1.24",
+    "react-native-storage": "^0.2.2",
+    "react-native-vector-icons": "^4.6.0",
+    "react-navigation": "^2.6.2"
+  },
+  "devDependencies": {
+    "babel-jest": "23.2.0",
+    "babel-preset-react-native": "5.0.2",
+    "jest": "23.3.0",
+    "react-test-renderer": "16.4.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

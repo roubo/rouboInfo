@@ -1,0 +1,79 @@
+{
+  "repo": [{
+    "title": "工作",
+    "data": [{
+      "key": "过一个方案",
+      "image": "plancast"
+    },
+      {
+        "key": "每天50行代码",
+        "image": "makecode"
+      },
+      {
+        "key": "处理邮件",
+        "image": "email"
+      },
+      {
+        "key": "处理jira",
+        "image": "jira"
+      },
+      {
+        "key": "更新一次TODO",
+        "image": "todo"
+      },
+      {
+        "key": "幕布记录",
+        "image": "mubu"
+      }
+    ],
+    "key": "work"
+  },
+    {
+      "title": "生活",
+      "data": [{
+        "key": "打电话给爸妈",
+        "image": "phone-call"
+      },
+        {
+          "key": "洗澡",
+          "image": "bath"
+        },
+        {
+          "key": "喝水一壶",
+          "image": "water"
+        },
+        {
+          "key": "午休30分钟",
+          "image": "sleep30"
+        }
+      ],
+      "key": "life"
+    },
+    {
+      "title": "健身",
+      "data": [{
+        "key": "有氧30分钟",
+        "image": "trainO30"
+      },
+        {
+          "key": "器械1小时",
+          "image": "trainM60"
+        }
+      ],
+      "key": "train"
+    },
+    {
+      "title": "充电",
+      "data": [{
+        "key": "电子书连续半小时",
+        "image": "ebook"
+      },
+        {
+          "key": "写作30字",
+          "image": "write"
+        }
+      ],
+      "key": "study"
+    }
+  ]
+}
