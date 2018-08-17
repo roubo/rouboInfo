@@ -1,12 +1,16 @@
 import {
     createBottomTabNavigator,
 } from 'react-navigation'
-
+import {
+   TouchableOpacity
+} from 'react-native'
 import RouboInfoStack from './components/RouboInfo'
 import RouboMineStack from './components/RouboMine'
 import RouboPlanStack from './components/RouboPlan'
 import TabBarItem from './components/TabBarItem'
 import React, {Component} from 'react'
+import ImageButton from './components/widget/ImageButton'
+import pxToDp from "./tools/pxToDp";
 
 /**
  *  应用根路由节点，通过底部导航栏分发页面
@@ -27,7 +31,8 @@ export default BottomTabNav = createBottomTabNavigator({
                         selectedImage = {require('./images/icon_info.png')}
                         normalImage = {require('./images/icon_info_normal.png')}
                     />
-            )
+            ),
+            tabBarButtonComponent: TouchableOpacity
         }
     },
     /**
@@ -45,6 +50,7 @@ export default BottomTabNav = createBottomTabNavigator({
                         normalImage = {require('./images/icon_plan_normal.png')}
                     />
             ),
+            tabBarButtonComponent: TouchableOpacity
         }
     },
     /**
@@ -61,7 +67,8 @@ export default BottomTabNav = createBottomTabNavigator({
                     selectedImage = {require('./images/icon_mine.png')}
                     normalImage = {require('./images/icon_mine_normal.png')}
                 />
-            )
+            ),
+            tabBarButtonComponent: TouchableOpacity
         }
     }
 }, {
@@ -69,6 +76,7 @@ export default BottomTabNav = createBottomTabNavigator({
     initialRouteName: 'Info',
     tabBarOptions : {
         inactiveTintColor: 'gray',
+        activeTintColor: '#36ab60',
         style: {
             height: 60
         }

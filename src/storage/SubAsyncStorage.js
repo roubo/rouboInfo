@@ -3,7 +3,7 @@ import {
     AsyncStorage,
 } from 'react-native'
 
-import Sync from 'SyncStorage'
+import Sync from './SyncStorage'
 
 let storage = undefined
 
@@ -134,6 +134,128 @@ const remove = (key) => {
     })
 }
 
+/**
+ * 保存key-id-value数据
+ * @param key
+ * @param id
+ * @param obj
+ */
+const saveWithId = (key, id, obj) => {
+    _initStorage()
+    storage.save({
+        key: key,
+        id: id,
+        data: obj
+    })
+}
+
+/**
+ * 保存含过期时间的key-id-value数据
+ * @param key
+ * @param id
+ * @param obj
+ * @param exp
+ */
+const saveWithIdWithExpires = (key, id, obj, exp) => {
+    _initStorage()
+    storage.save({
+        key: key,
+        id: id,
+        data: obj,
+        expires: exp
+    })
+}
+
+/**
+ * 无sync读取本地数据（key-id-value)
+ * @param key
+ * @param id
+ * @param callback
+ */
+const loadWithId = (key, id, callback) => {
+    _initStorage()
+    storage.load({
+        key: key,
+        id: id,
+        // autoSync(默认为true)意味着在没有找到数据或数据过期时自动调用相应的sync方法
+        autoSync: false,
+        // syncInBackground(默认为true)意味着如果数据过期，
+        // 在调用sync方法的同时先返回已经过期的数据。
+        // 设置为false的话，则始终强制返回sync方法提供的最新数据(当然会需要更多等待时间)。
+        syncInBackground: false,
+        // 给sync方法传递额外的参数
+        syncParams: {
+            extraFetchOptions: {
+            },
+            someFlag: true,
+        }
+    }).then(res => {
+        callback && callback.success && callback.success(res)
+    }).catch(err => {
+        callback && callback.fail && callback.fail(err)
+    })
+}
+
+/**
+ * 无sync读取所有数据（key-id-value)
+ * @param key
+ * @param id
+ * @param callback
+ */
+const loadAllWithId = (key, callback) => {
+    _initStorage()
+    storage.getAllDataForKey(key
+    ).then(res => {
+        callback && callback.success && callback.success(res)
+    }).catch(err => {
+        callback && callback.fail && callback.fail(err)
+    })
+}
+
+/**
+ * 有sync读取本地数据（key-id-value)
+ * @param key
+ * @param id
+ * @param extOpt
+ * @param callback
+ */
+const loadWithIdWithSync = (key, extOpt, callback) => {
+    _initStorage()
+    storage.load({
+        key: key,
+        id: id,
+        // autoSync(默认为true)意味着在没有找到数据或数据过期时自动调用相应的sync方法
+        autoSync: true,
+        // syncInBackground(默认为true)意味着如果数据过期，
+        // 在调用sync方法的同时先返回已经过期的数据。
+        // 设置为false的话，则始终强制返回sync方法提供的最新数据(当然会需要更多等待时间)。
+        syncInBackground: true,
+        // 给sync方法传递额外的参数
+        syncParams: {
+            extraFetchOptions: extOpt,
+            someFlag: true,
+        }
+    }).then(res => {
+        callback && callback.success && callback.success(res)
+    }).catch(err => {
+        callback && callback.fail && callback.fail(err)
+    })
+}
+
+
+/**
+ * 移除数据（key-id-value)
+ * @param key
+ * @param id
+ */
+const removeWithId = (key,id) => {
+    _initStorage()
+    storage.remove({
+        key: key,
+        id:id
+    })
+}
+
 //TODO: key-id-value类型
 
 const subAsyncStorage = {
@@ -141,7 +263,13 @@ const subAsyncStorage = {
     saveWithExpires,
     load,
     loadWithSync,
-    remove
+    remove,
+    saveWithId,
+    saveWithIdWithExpires,
+    loadWithId,
+    loadWithIdWithSync,
+    removeWithId,
+    loadAllWithId
 
 }
 

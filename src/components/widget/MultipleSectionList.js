@@ -37,10 +37,10 @@ export default class MultipleSectionList extends Component {
 
     static defaultProps = {
         numColumns : 2,
-        inputData: []
+        inputData: [],
+        navigation: null
     }
 
-    // -------------------------- flatlist start
 
     _getImage = (name) => {
         switch (name) {
@@ -76,8 +76,29 @@ export default class MultipleSectionList extends Component {
                 return require('../../images/repo/plancast.png')
         }
     }
+
+    /**
+     * 点击ImageButton事件
+     * @param image
+     * @param title
+     * @private
+     */
+    _onButtonPress = (image, title) => {
+        this.props.navigation.navigate('AddPage', {
+            image: image,
+            isCustom: false,
+            title: title
+        })
+    }
+
+    /**
+     * 列表Item Render, Item为ImageButton
+     * @param item
+     * @param index
+     * @returns {*}
+     * @private
+     */
     _renderFlatListItems = ({item, index}) => {
-        let imageUrl = "../../images/repo/" + item.image + ".png"
         return (
             <View style={styles.itemContainer}>
                 <ImageButton
@@ -102,22 +123,35 @@ export default class MultipleSectionList extends Component {
                         marginTop: 5
                     }}
                     text = {item.key}
-                    // TODO image
                     image = {this._getImage(item.image)}
+                    onButtonPress = {() => {
+                        this._onButtonPress(item.image, item.key)
+                    }}
                 />
             </View>
         )
     }
 
+    /**
+     * Flatlist item 的 key
+     * @param item
+     * @param index
+     * @returns {*}
+     * @private
+     */
     _keyItemsExtractor = (item, index) => {
         return item.key
     }
 
 
-    // -------------------------- flatlist end
-
-
-    // -------------------------- sectionlist start
+    /**
+     * 组件最外层的sectionlist item render, item为flatlist
+     * @param item
+     * @param index
+     * @param section
+     * @returns {*}
+     * @private
+     */
     _readerSectionItems = ({item, index, section}) => {
         if(index != section.data.length-1){
             return null
@@ -138,6 +172,12 @@ export default class MultipleSectionList extends Component {
     }
 
 
+    /**
+     * sectionlist 的 Header Render
+     * @param section
+     * @returns {*}
+     * @private
+     */
     _renderSectionHeader = ({section}) => {
         return (
             <View style={styles.titleContainer}>
@@ -147,10 +187,16 @@ export default class MultipleSectionList extends Component {
         )
     }
 
+    /**
+     * sectionlist item key
+     * @param item
+     * @param index
+     * @returns {*}
+     * @private
+     */
     _keyExtractor = (item, index) => {
         return item.key
     }
-    // -------------------------- sectionlist end
 
     render() {
         return (

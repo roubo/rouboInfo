@@ -1,4 +1,4 @@
-import storage from 'SubAsyncStorage'
+import storage from './SubAsyncStorage'
 
 
 const sync = {

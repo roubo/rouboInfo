@@ -10,6 +10,8 @@ import { createStackNavigator } from 'react-navigation'
 import PlanAddPage from './sub_plan/PlanAddPage'
 import PlanMainPage from './sub_plan/PlanMainPage'
 import PlanRepoPage from './sub_plan/PlanRepoPage'
+import pxToDp from "../tools/pxToDp";
+import ImageButton from "./widget/ImageButton"
 
 
 /**
@@ -36,16 +38,25 @@ export default RouboPlanStack = createStackNavigator({
             headerTintColor: '#ffffff',
             headerLeft: <View/>,
             headerRight: (
-                <Button
-                    title = ''
-                    onPress = {
+                <ImageButton
+                    styleContainer = {{
+                        backgroundColor : 'rgba(0x11, 0x95, 0xdb, 0x00)',
+                        flex: 1,
+                        justifyContent: 'center',
+                        marginRight: 10
+                    }}
+                    styleImage = {{
+                        width: 30,
+                        height: 30
+                    }}
+                    styleText = {{
+                    }}
+                    image = {require('../images/newplan.png')}
+                    onButtonPress = {
                         () => {
                             navigation.navigate('RepoPage')
                         }
                     }
-                    icon={{name: 'fingerprint'}}
-                    color = {'#ffffff'}
-                    backgroundColor = 'rgba(0x11, 0x95, 0xdb, 0x00)'
                 />
             )
         })
@@ -55,9 +66,28 @@ export default RouboPlanStack = createStackNavigator({
      */
     AddPage: {
         screen: PlanAddPage,
-        navigationOptions: {
-            title: '新增一个日常'
-        }
+        navigationOptions: ({navigation}) => ({
+            title: '新增一个日常',
+            headerRight: (
+                <ImageButton
+                    styleContainer = {{
+                        backgroundColor : 'rgba(0x11, 0x95, 0xdb, 0x00)',
+                        flex: 1,
+                        justifyContent: 'center',
+                        marginRight: 10
+                    }}
+                    styleImage = {{
+                        width: 30,
+                        height: 30
+                    }}
+                    styleText = {{
+                    }}
+                    image = {require('../images/add.png')}
+                    // 调用子组件的方法
+                    onButtonPress = {navigation.state.params?navigation.state.params.rightHeaderPress:null}
+                />
+            )
+        })
     },
     /**
      *  日常仓库页
