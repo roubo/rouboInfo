@@ -68,6 +68,7 @@
 		E9E31E04CD9B45EF9B1E1C2B /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72F91EE75753426FB5253FA3 /* MaterialCommunityIcons.ttf */; };
 		EF75A471260E48B296C642B5 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6C972766EDC4A11BD2832D8 /* libRNVectorIcons.a */; };
 		F5F04C8D46C14B31B50C73A4 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C92B92C9DF644B09CAA2A2E /* MaterialIcons.ttf */; };
+		F8B082B5212A7BED0011FEE4 /* done.wav in Resources */ = {isa = PBXBuildFile; fileRef = F8B082B4212A7BEC0011FEE4 /* done.wav */; };
 		F8F694B02110549F0021B2AD /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8F6947F2110549F0021B2AD /* Octicons.ttf */; };
 		F8F694B12110549F0021B2AD /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8F694802110549F0021B2AD /* Feather.ttf */; };
 		F8F694B22110549F0021B2AD /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8F694812110549F0021B2AD /* Entypo.ttf */; };
@@ -437,6 +438,7 @@
 		ED3916EA6F36468F84251012 /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F22DCE070A2B499F9204A086 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		F7F7D11CF02740E9951A2429 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		F8B082B4212A7BEC0011FEE4 /* done.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = done.wav; sourceTree = "<group>"; };
 		F8F6947F2110549F0021B2AD /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
 		F8F694802110549F0021B2AD /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
 		F8F694812110549F0021B2AD /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
@@ -735,6 +737,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				F8B082B4212A7BEC0011FEE4 /* done.wav */,
 				F8F6947E2110549F0021B2AD /* Fonts */,
 				13B07FAE1A68108700A75B9A /* rouboInfo */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -1313,6 +1316,7 @@
 				5A28CAAC2FB84CA3A3D7E287 /* EvilIcons.ttf in Resources */,
 				F8F694BA2110549F0021B2AD /* MaterialIcons.ttf in Resources */,
 				F8F694B22110549F0021B2AD /* Entypo.ttf in Resources */,
+				F8B082B5212A7BED0011FEE4 /* done.wav in Resources */,
 				B1E8EEE95C02438489172162 /* Feather.ttf in Resources */,
 				6429C53E5A6C417A8E1F56C5 /* FontAwesome.ttf in Resources */,
 				07AD0CFF162548C58EFEECFA /* Foundation.ttf in Resources */,
@@ -1360,7 +1364,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
