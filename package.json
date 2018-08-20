@@ -12,6 +12,7 @@
     "react-native": "0.56.0",
     "react-native-elements": "^1.0.0-beta",
     "react-native-getui": "^1.1.24",
+    "react-native-sound": "^0.10.9",
     "react-native-storage": "^0.2.2",
     "react-native-swipeout": "^2.3.6",
     "react-native-vector-icons": "^4.6.0",
