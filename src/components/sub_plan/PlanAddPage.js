@@ -76,7 +76,7 @@ export default class PlanAddPage extends React.Component {
         const {params} = this.props.navigation.state
         storage.saveWithId(
             "MyPlanInfo",
-            this.state.text,
+            params.isCustom ? this.state.text : params.title,
             {
                 image: params.image,
                 name: params.isCustom ? this.state.text : params.title,
