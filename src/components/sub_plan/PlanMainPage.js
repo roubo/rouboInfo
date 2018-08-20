@@ -13,7 +13,7 @@ import tool from '../../tools/tool'
 
 export default class PlanMainPage extends React.Component {
 
-
+    _listRef: FlatList<*>
     constructor(props) {
         super(props)
         this.state = {
@@ -94,6 +94,22 @@ export default class PlanMainPage extends React.Component {
        }
     }
 
+
+    /**
+     * 判断当天是否需要打卡
+     * @param info
+     * @returns {*}
+     * @private
+     */
+    _updateToday = (info) => {
+        let mydate=new Date()
+        let dayOfWeek = mydate.getDay()
+        for (let index in info) {
+            info[index].todayIsNeed = info[index].repeat[dayOfWeek]
+        }
+        return info
+    }
+
     /**
      * 获取最新的日常数据
      * @private
@@ -103,6 +119,7 @@ export default class PlanMainPage extends React.Component {
             "MyPlanInfo",
             {
                 success: (res) => {
+                    res = this._updateToday(res)
                     res.sort(this._sortCompare('today'))
                     this.setState({
                         planInfo: res
@@ -119,7 +136,6 @@ export default class PlanMainPage extends React.Component {
      * 每次更新props时调用
      */
     componentWillMount() {
-        console.warn("will mount")
         this._getPlanInfo()
     }
 
@@ -127,8 +143,19 @@ export default class PlanMainPage extends React.Component {
      * 每次更新props时调用
      */
     componentWillReceiveProps(nextProps) {
-        console.warn("will recive")
         this._getPlanInfo()
+    }
+
+    /**
+     * 向父组件注册方法
+     */
+    componentDidMount() {
+        this.props.navigation.setParams({
+            scrollToTop: () => {
+                this._getPlanInfo()
+                this._listRef.scrollToIndex({viewPosition:0, index:0})
+            }
+        })
     }
 
     _renderItemCover = (todayIsDone, todayIsNeed) => {
@@ -263,7 +290,7 @@ export default class PlanMainPage extends React.Component {
         return (
             <View>
                 <Swipeout
-                    sensitivity = {30}
+                    sensitivity = {10}
                     style={styles.itemContainer}
                     backgroundColor = {index > this.state.colorList.length ? this.state.colorList[index-this.state.colorList.length] : this.state.colorList[index]}
                     right={swipButton}>
@@ -295,14 +322,20 @@ export default class PlanMainPage extends React.Component {
     _keyItemsExtractor = (item, index) => {
        return item.name + index
     }
+
+    _captureRef = (ref) => {
+        this._listRef = ref
+    }
+
     render(){
         return (
-            <View>
+            <View style={{height:'100%'}}>
                 <FlatList
                     data = {this.state.planInfo}
                     renderItem = {this._renderFlatListItems}
                     extraData = {this.state}
                     keyExtractor = {this._keyItemsExtractor}
+                    ref = {this._captureRef}
                 />
             </View>
         )

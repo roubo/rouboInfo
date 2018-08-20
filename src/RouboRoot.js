@@ -12,6 +12,7 @@ import React, {Component} from 'react'
 import ImageButton from './components/widget/ImageButton'
 import pxToDp from "./tools/pxToDp";
 
+let lastPress = 0
 /**
  *  应用根路由节点，通过底部导航栏分发页面
  */
@@ -40,7 +41,7 @@ export default BottomTabNav = createBottomTabNavigator({
      */
     Plan: {
         screen: RouboPlanStack,
-        navigationOptions : {
+        navigationOptions : ({navigation}) => ({
             tabBarLabel: '日常',
             tabBarIcon: ({focused, tintColor}) => (
                     <TabBarItem
@@ -50,8 +51,22 @@ export default BottomTabNav = createBottomTabNavigator({
                         normalImage = {require('./images/icon_plan_normal.png')}
                     />
             ),
-            tabBarButtonComponent: TouchableOpacity
-        }
+            tabBarButtonComponent: TouchableOpacity,
+            tabBarOnPress: () => {
+                if(navigation.state.index === 0) {
+                    const navigationInRoute = navigation.getChildNavigation(navigation.state.routes[0].key)
+                    navigation.navigate(navigation.state.key)
+                    let delta = new Date().getTime() - lastPress
+                    // 双击逻辑, 滚动和重新获取数据
+                    if(delta < 200) {
+                        if (!!navigationInRoute && navigationInRoute.isFocused() && !!navigationInRoute.state.params && !!navigationInRoute.state.params.scrollToTop) {
+                            navigationInRoute.state.params.scrollToTop()
+                        }
+                    }
+                    lastPress = new Date().getTime()
+                }
+            }
+        })
     },
     /**
      *  我的
