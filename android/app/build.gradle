@@ -103,7 +103,7 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
@@ -117,9 +117,19 @@ android {
         }
     }
     buildTypes {
+        debug {
+        }
+        // 测试阶段
+        releaseStaging {
+            minifyEnabled enableProguardInReleaseBuilds
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            buildConfigField "String", "CODEPUSH_KEY", "4vhPonAPr02iquGPIGPtIAcvpuGw4ksvOXqog"
+        }
+        // 发布阶段
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            buildConfigField "String", "CODEPUSH_KEY", "P53DVm4F3yXIkUcECjFrBtbMifkM4ksvOXqog"
         }
     }
     // applicationVariants are e.g. debug, release
