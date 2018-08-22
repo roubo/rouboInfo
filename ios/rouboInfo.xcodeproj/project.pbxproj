@@ -58,7 +58,6 @@
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		B0B432CCBE0A48CD8662B557 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9859A4F938AD4160B6B7535B /* libc++.tbd */; };
 		B1E8EEE95C02438489172162 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEE4FCD828DE41B0A9A4205B /* Feather.ttf */; };
-		B6FAC4C272BB40A4805D8198 /* libRCTGetuiModule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 990ABF5755224146ADBCE6A0 /* libRCTGetuiModule.a */; };
 		BC855CD309074B29ABBAE2B9 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6710A4D8D614DF49E288896 /* Entypo.ttf */; };
 		BE4416EFEE5C41E180EFD830 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DACA29329CB84DECACDB94B0 /* Zocial.ttf */; };
 		C2E815D99F044CDFB15616CA /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B91F20529BB443938EF7B1A3 /* SimpleLineIcons.ttf */; };
@@ -357,6 +356,13 @@
 			remoteGlobalIDString = 358F4ED71D1E81A9004DF814;
 			remoteInfo = RCTBlob;
 		};
+		F8944CFB212D3A4200750151 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 83CBBA2D1A601D0E00E9B192;
+			remoteInfo = React;
+		};
 		F8B082B0212A72140011FEE4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7149D6903E264C9498D8182D /* RNSound.xcodeproj */;
@@ -377,13 +383,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = F886647B1F4ADB500036D01B;
 			remoteInfo = "CodePush-tvOS";
-		};
-		F8C2C88A21254AD400DF4CF0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 50D11ECD4B604EA1BED05C85 /* RCTGetuiModule.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 84F17A291E63FB1B00F97ED1;
-			remoteInfo = RCTGetuiModule;
 		};
 		F8CA63AB20F64BCE00E2271B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -422,7 +421,6 @@
 		34906B43AFA44387AEDB8614 /* CodePush.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = CodePush.xcodeproj; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; };
 		3ACE9DF44CE34F2BB935E684 /* UIKit.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		46D9A979C0154979B2CCDAE4 /* CoreLocation.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		50D11ECD4B604EA1BED05C85 /* RCTGetuiModule.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTGetuiModule.xcodeproj; path = "../node_modules/react-native-getui/ios/RCTGetuiModule/RCTGetuiModule.xcodeproj"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		6C92B92C9DF644B09CAA2A2E /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		6E515DDEBF0C4E2882A4E546 /* AdSupport.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -497,7 +495,6 @@
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				EF75A471260E48B296C642B5 /* libRNVectorIcons.a in Frameworks */,
-				B6FAC4C272BB40A4805D8198 /* libRCTGetuiModule.a in Frameworks */,
 				529938D4377B4B44869AB5F4 /* libz.tbd in Frameworks */,
 				B0B432CCBE0A48CD8662B557 /* libc++.tbd in Frameworks */,
 				D410F027A1E547D48C1B28F9 /* libsqlite3.tbd in Frameworks */,
@@ -737,7 +734,6 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				9661E2ACB909442095A2B08E /* RNVectorIcons.xcodeproj */,
-				50D11ECD4B604EA1BED05C85 /* RCTGetuiModule.xcodeproj */,
 				7149D6903E264C9498D8182D /* RNSound.xcodeproj */,
 				34906B43AFA44387AEDB8614 /* CodePush.xcodeproj */,
 			);
@@ -804,14 +800,6 @@
 			children = (
 				F8B082F2212BFB500011FEE4 /* libCodePush.a */,
 				F8B082F4212BFB500011FEE4 /* libCodePush.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F8C2C88121254AD400DF4CF0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F8C2C88B21254AD400DF4CF0 /* libRCTGetuiModule.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -887,6 +875,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				F8944CFC212D3A4200750151 /* PBXTargetDependency */,
 			);
 			name = rouboInfo;
 			productName = "Hello World";
@@ -988,10 +977,6 @@
 				{
 					ProductGroup = 00C302B61ABCB90400DB3ED1 /* Products */;
 					ProjectRef = 00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */;
-				},
-				{
-					ProductGroup = F8C2C88121254AD400DF4CF0 /* Products */;
-					ProjectRef = 50D11ECD4B604EA1BED05C85 /* RCTGetuiModule.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302BC1ABCB91800DB3ED1 /* Products */;
@@ -1325,13 +1310,6 @@
 			remoteRef = F8B082F3212BFB500011FEE4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		F8C2C88B21254AD400DF4CF0 /* libRCTGetuiModule.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRCTGetuiModule.a;
-			remoteRef = F8C2C88A21254AD400DF4CF0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		F8CA63AC20F64BCE00E2271B /* libRNVectorIcons.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1477,6 +1455,11 @@
 			target = 2D02E47A1E0B4A5D006451C7 /* rouboInfo-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
+		F8944CFC212D3A4200750151 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = React;
+			targetProxy = F8944CFB212D3A4200750151 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1566,13 +1549,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 52449NW5V8;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-getui/ios/RCTGetuiModule/RCTGetuiModule",
-					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
-					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
-					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = rouboInfo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1596,13 +1573,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 52449NW5V8;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-getui/ios/RCTGetuiModule/RCTGetuiModule",
-					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
-					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
-					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = rouboInfo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1811,6 +1782,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-getui/ios/RCTGetuiModule/RCTGetuiModule",
+					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
+					"$(SRCROOT)/../node_modules/react-native-code-push/ios",
+				);
+				"HEADER_SEARCH_PATHS[arch=*]" = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1835,7 +1814,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODEPUSH_KEY = "3xjDztydEdqZW0SjK6WmdRLQYHeJ4ksvOXqog";
+				CODEPUSH_KEY = 3xjDztydEdqZW0SjK6WmdRLQYHeJ4ksvOXqog;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1847,6 +1826,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
+					"$(SRCROOT)/../node_modules/react-native-code-push/ios/",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -1871,7 +1856,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODEPUSH_KEY = "hcilTTJO79vXVvdjZGCao7spE5YA4ksvOXqog";
+				CODEPUSH_KEY = hcilTTJO79vXVvdjZGCao7spE5YA4ksvOXqog;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1883,6 +1868,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
+					"$(SRCROOT)/../node_modules/react-native-code-push/ios/",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -1898,13 +1889,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 52449NW5V8;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-getui/ios/RCTGetuiModule/RCTGetuiModule",
-					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
-					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
-					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = rouboInfo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
