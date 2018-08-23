@@ -123,13 +123,13 @@ android {
         releaseStaging {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-            buildConfigField "String", "CODEPUSH_KEY", "4vhPonAPr02iquGPIGPtIAcvpuGw4ksvOXqog"
+            buildConfigField "String", "CODEPUSH_KEY", "\"4vhPonAPr02iquGPIGPtIAcvpuGw4ksvOXqog\""
         }
         // 发布阶段
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-            buildConfigField "String", "CODEPUSH_KEY", "P53DVm4F3yXIkUcECjFrBtbMifkM4ksvOXqog"
+            buildConfigField "String", "CODEPUSH_KEY",  "\"P53DVm4F3yXIkUcECjFrBtbMifkM4ksvOXqog\""
         }
     }
     // applicationVariants are e.g. debug, release
@@ -150,7 +150,6 @@ android {
 dependencies {
     compile project(':react-native-code-push')
     compile project(':react-native-sound')
-    compile project(':react-native-getui')
     compile project(':react-native-vector-icons')
     compile fileTree(dir: "libs", include: ["*.jar"])
     compile "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"

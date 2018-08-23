@@ -71,5 +71,7 @@
 	</array>
 	<key>CodePushDeploymentKey</key>
 	<string>$(CODEPUSH_KEY)</string>
+	<key>CodePushServerURL</key>
+	<string>http://52.80.40.124:8080</string>
 </dict>
 </plist>

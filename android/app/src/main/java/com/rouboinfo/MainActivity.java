@@ -2,7 +2,6 @@ package com.rouboinfo;
 
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
-import com.getui.reactnativegetui.GetuiModule;
 
 public class MainActivity extends ReactActivity {
 
@@ -18,7 +17,5 @@ public class MainActivity extends ReactActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // 初始化个推
-        GetuiModule.initPush(this);
     }
 }
