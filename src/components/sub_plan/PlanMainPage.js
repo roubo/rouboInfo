@@ -18,60 +18,10 @@ export default class PlanMainPage extends React.Component {
         super(props)
         this.state = {
             planInfo: null,
-            colorList : ["#FFE4B5", "#D3D3D3", "#B22222", "#FF6347", "#228B22", "#6A5ACD", "#708090", "#F0F8FF", "#87CEFA", "#48D1CC", "#FFD700"]
+            colorList : ["#708090", "#F0F8FF", "#87CEFA", "#48D1CC", "#FFD700", "#FFE4B5", "#D3D3D3", "#B22222", "#FF6347"]
         }
     }
 
-    _getImage = (name) => {
-        switch (name) {
-            case 'plancast':
-                return require('../../images/repo/plancast.png')
-            case 'makecode':
-                return require('../../images/repo/makecode.png')
-            case 'email':
-                return require('../../images/repo/email.png')
-            case 'jira':
-                return require('../../images/repo/jira.png')
-            case 'todo':
-                return require('../../images/repo/todo.png')
-            case 'mubu':
-                return require('../../images/repo/mubu.png')
-            case 'phone-call':
-                return require('../../images/repo/phone-call.png')
-            case 'bath':
-                return require('../../images/repo/bath.png')
-            case 'water':
-                return require('../../images/repo/water.png')
-            case 'sleep30':
-                return require('../../images/repo/sleep30.png')
-            case 'trainO30':
-                return require('../../images/repo/trainO30.png')
-            case 'trainM60':
-                return require('../../images/repo/trainM60.png')
-            case 'ebook':
-                return require('../../images/repo/ebook.png')
-            case 'write':
-                return require('../../images/repo/write.png')
-            case 'custom':
-                return require('../../images/repo/custom.png')
-            case 'beforesleep':
-                return require('../../images/beforesleep.png')
-            case 'wakeup':
-                return require('../../images/wakeup.png')
-            case 'onway':
-                return require('../../images/onway.png')
-            case 'noon':
-                return require('../../images/noon.png')
-            case 'workout':
-                return require('../../images/workout.png')
-            case 'anytime':
-                return require('../../images/anytime.png')
-            case 'complete':
-                return require('../../images/complete.png')
-            default:
-                return require('../../images/repo/plancast.png')
-        }
-    }
 
     /**
      * 列表数据排序函数，用于区分今日是否已经打完卡排序
@@ -168,7 +118,7 @@ export default class PlanMainPage extends React.Component {
                     <View style={styles.itemCoverStyle}/>
                     <View>
                         <Image
-                            source={this._getImage('complete')}
+                            source={tool.getImage('complete')}
                             style={{
                                 marginTop: -50,
                                 width: 35,
@@ -298,7 +248,7 @@ export default class PlanMainPage extends React.Component {
                         <View style={styles.itemInterLeftContainer}>
                             <Image
                                 style={styles.itemImageStyle}
-                                source={this._getImage(item.image)}
+                                source={tool.getImage(item.image)}
                             />
                             <Text style={styles.itemTextStyle}>
                                 {item.name}

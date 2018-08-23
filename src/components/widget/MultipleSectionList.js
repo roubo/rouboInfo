@@ -5,6 +5,7 @@ import {
 } from 'react-native'
 import ImageButton from "./ImageButton";
 import pxToDp from "../../tools/pxToDp"
+import tool from '../../tools/tool'
 
 /**
  * [inputData]:
@@ -41,41 +42,6 @@ export default class MultipleSectionList extends Component {
         navigation: null
     }
 
-
-    _getImage = (name) => {
-        switch (name) {
-            case 'plancast':
-                return require('../../images/repo/plancast.png')
-            case 'makecode':
-                return require('../../images/repo/makecode.png')
-            case 'email':
-                return require('../../images/repo/email.png')
-            case 'jira':
-                return require('../../images/repo/jira.png')
-            case 'todo':
-                return require('../../images/repo/todo.png')
-            case 'mubu':
-                return require('../../images/repo/mubu.png')
-            case 'phone-call':
-                return require('../../images/repo/phone-call.png')
-            case 'bath':
-                return require('../../images/repo/bath.png')
-            case 'water':
-                return require('../../images/repo/water.png')
-            case 'sleep30':
-                return require('../../images/repo/sleep30.png')
-            case 'trainO30':
-                return require('../../images/repo/trainO30.png')
-            case 'trainM60':
-                return require('../../images/repo/trainM60.png')
-            case 'ebook':
-                return require('../../images/repo/ebook.png')
-            case 'write':
-                return require('../../images/repo/write.png')
-            default:
-                return require('../../images/repo/plancast.png')
-        }
-    }
 
     /**
      * 点击ImageButton事件
@@ -123,7 +89,7 @@ export default class MultipleSectionList extends Component {
                         marginTop: 5
                     }}
                     text = {item.key}
-                    image = {this._getImage(item.image)}
+                    image = {tool.getImage(item.image)}
                     onButtonPress = {() => {
                         this._onButtonPress(item.image, item.key)
                     }}
