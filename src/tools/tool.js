@@ -75,6 +75,8 @@ const getImage = (name) => {
             return require('../images/ref.png')
         case 'version':
             return require('../images/version.png')
+        case 'noneed':
+            return require('../images/noneed.png')
         default:
             return require('../images/repo/plancast.png')
     }

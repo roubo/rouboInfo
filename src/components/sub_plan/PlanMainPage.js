@@ -18,7 +18,7 @@ export default class PlanMainPage extends React.Component {
         super(props)
         this.state = {
             planInfo: null,
-            colorList : ["#708090", "#F0F8FF", "#87CEFA", "#48D1CC", "#FFD700", "#FFE4B5", "#D3D3D3", "#B22222", "#FF6347"]
+            colorList : ["#985054","#DA6932","#E6B33D","#F44365","#F89D99","#F9CCAD","#C9C8AA","#84AF9B","#172C3D"]
         }
     }
 
@@ -108,8 +108,8 @@ export default class PlanMainPage extends React.Component {
         })
     }
 
-    _renderItemCover = (todayIsDone, todayIsNeed) => {
-        if(!todayIsDone || !todayIsNeed){
+    _renderItemCover = (todayIsDone, todayIsNeed, name) => {
+        if(!todayIsDone && todayIsNeed){
             return null
         }
         if(todayIsDone) {
@@ -119,6 +119,24 @@ export default class PlanMainPage extends React.Component {
                     <View>
                         <Image
                             source={tool.getImage('complete')}
+                            style={{
+                                marginTop: -50,
+                                width: 35,
+                                height: 35,
+                                alignSelf: 'center'
+                            }}
+                        />
+                    </View>
+                </View>
+            )
+        }
+        if(!todayIsNeed) {
+            return (
+                <View>
+                    <View style={styles.itemCoverStyle}/>
+                    <View>
+                        <Image
+                            source={tool.getImage('noneed')}
                             style={{
                                 marginTop: -50,
                                 width: 35,
@@ -263,7 +281,7 @@ export default class PlanMainPage extends React.Component {
                             </Text>
                         </View>
                     </TouchableOpacity>
-                    {this._renderItemCover(item.today, item.todayIsNeed)}
+                    {this._renderItemCover(item.today, item.todayIsNeed, item.image)}
                 </Swipeout>
             </View>
         )
