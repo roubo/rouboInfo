@@ -9,6 +9,7 @@ export default class TabBarItem extends Component {
         super(props)
     }
 
+
     static defaultProps = {
         tintColor: '#ffffff',
         focused: false,

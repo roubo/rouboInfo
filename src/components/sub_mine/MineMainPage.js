@@ -68,7 +68,7 @@ export default class MineMainPage extends React.Component {
             case 'version':
                 return (
                     <Overlay isVisible={true} height={100}>
-                        <Text>热更版本：第1次</Text>
+                        <Text>热更版本：第2次</Text>
                     </Overlay>
                 )
             default:
