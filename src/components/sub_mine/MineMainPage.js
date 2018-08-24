@@ -3,6 +3,7 @@ import {
     Text,
     FlatList,
     TouchableOpacity,
+    TouchableWithoutFeedback,
     View
 } from 'react-native'
 import {
@@ -33,7 +34,8 @@ export default class MineMainPage extends React.Component {
                     image: 'contact'
                 }
             ],
-            showOverlayName: null
+            showOverlayName: null,
+            showOverlay: false
         }
     }
 
@@ -41,7 +43,14 @@ export default class MineMainPage extends React.Component {
         switch (name) {
             case 'version':
                 this.setState({
-                    showOverlayName: 'version'
+                    showOverlayName: 'version',
+                    showOverlay: true
+                })
+                break
+            case 'contact':
+                this.setState({
+                    showOverlayName: 'contact',
+                    showOverlay: true
                 })
                 break
             default:
@@ -50,12 +59,12 @@ export default class MineMainPage extends React.Component {
     }
     _renderItem = ({item}) => {
         return (
-            <TouchableOpacity onPress={() => {this._onPress(item.image)}}>
-                <ListItem
-                    title={item.name}
-                    leftAvatar={{ source: tool.getImage(item.image)}}
-                />
-            </TouchableOpacity>
+                <TouchableOpacity onPress={() => {this._onPress(item.image)}}>
+                    <ListItem
+                        title={item.name}
+                        leftAvatar={{ source: tool.getImage(item.image)}}
+                    />
+                </TouchableOpacity>
         )
     }
 
@@ -67,8 +76,32 @@ export default class MineMainPage extends React.Component {
         switch (name) {
             case 'version':
                 return (
-                    <Overlay isVisible={true} height={100}>
-                        <Text>热更版本：第2次</Text>
+                    <Overlay isVisible={this.state.showOverlay}
+                             height="auto"
+                             width="auto"
+                             onBackdropPress={() => {
+                                 this.setState({
+                                    showOverlay: false,
+                                    showOverlayName: null
+                                 })}}
+                    >
+                        <Text>应用版本：V1.0.0</Text>
+                        <Text>热更次数：第3次</Text>
+                    </Overlay>
+                )
+            case 'contact':
+                return (
+                    <Overlay isVisible={this.state.showOverlay}
+                             height="auto"
+                             width="auto"
+                             onBackdropPress={() => {
+                                 this.setState({
+                                     showOverlay: false,
+                                     showOverlayName: null
+                                 })}}
+                    >
+                        <Text>email: daijunjian11@gmail.com</Text>
+                        <Text>phone: 15925923963</Text>
                     </Overlay>
                 )
             default:

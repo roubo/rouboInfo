@@ -1,16 +1,11 @@
 import {
     View,
-    Text,
 } from 'react-native'
-import {
-    Button
-} from 'react-native-elements'
 import React from 'react'
 import { createStackNavigator } from 'react-navigation'
 import PlanAddPage from './sub_plan/PlanAddPage'
 import PlanMainPage from './sub_plan/PlanMainPage'
 import PlanRepoPage from './sub_plan/PlanRepoPage'
-import pxToDp from "../tools/pxToDp";
 import ImageButton from "./widget/ImageButton"
 
 
